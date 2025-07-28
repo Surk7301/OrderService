@@ -16,7 +16,7 @@ public class OrderService implements IOrderService {
 
     @Override
     public CreateOrderResponseDTO createOrder(OrderRequestDTO request){
-        Order order = new Order();
+      //persist the order in the order table > OrderRequestDTO > Order Entity
 
     }
 
