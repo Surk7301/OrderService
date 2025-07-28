@@ -2,6 +2,7 @@ package com.Ecom.OrderService.service;
 
 import com.Ecom.OrderService.dto.CreateOrderResponseDTO;
 import com.Ecom.OrderService.dto.OrderRequestDTO;
+import com.Ecom.OrderService.entity.Order;
 import com.Ecom.OrderService.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class OrderService implements IOrderService {
 
     @Override
     public CreateOrderResponseDTO createOrder(OrderRequestDTO request){
+        Order order = new Order();
 
     }
 

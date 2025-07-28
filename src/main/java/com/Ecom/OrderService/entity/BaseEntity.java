@@ -22,11 +22,17 @@ public class BaseEntity {
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
+    private Instant updatedAt;
 
     @PrePersist
     protected void onCreate(){
         Instant now = Instant.now();
         this.createdAt = now;
         this.updatedAt = now;
+    }
+
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = Instant.now();
     }
 }

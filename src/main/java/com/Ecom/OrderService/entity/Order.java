@@ -1,8 +1,10 @@
 package com.Ecom.OrderService.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.Ecom.OrderService.enums.OrderStatus;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -11,6 +13,13 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name="orders")
-public class Order {
+public class Order extends BaseEntity{
+    private Long userId;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> items;
 
 }
